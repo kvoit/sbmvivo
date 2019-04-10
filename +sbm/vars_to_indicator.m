@@ -12,8 +12,8 @@ if numel(vars_mat)>6 && strcmp(vars_mat(1:7),'file://')
     vars_mat = vars_mat(8:end);
 end
 vars = load(vars_mat);
-logSR = log([ unique([vars.Pout.S])' unique([vars.Pout.R])' ] ); % 'unique' is a quick fix to merge multiple segments of one cell. since it is a fitted double value, it is improbable that two will have the same.
-                                                                 % TODO: replace with clean solution
+logSR = log([ [vars.Pout([true;diff(vars.neuronindex_orig)>0]).S]' [vars.Pout([true;diff(vars.neuronindex_orig)>0]).R]' ] ); 
+
 if isempty(logSR)
     normal_meancov_logSR = nan(2, 3);  
 elseif size(logSR, 1) == 1
