@@ -13,3 +13,4 @@ figs/
 mex/sbm_cuda/*.mex*
 .directory
 data/*.mat
+data/archive
