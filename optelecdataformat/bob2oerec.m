@@ -169,6 +169,11 @@ if ~isempty(oerec)
     oerec = oerec_split_validF(oerec,opts.minT);
     
 end
+
+for i = 1:numel(oerec)
+    oerec(i).name = oerec(i).data(1).neuronuid;
+end
+
 fprintf('\nConverted %d neurons, %d total segments.\n\n',numel(oerec), numel(cat(2, oerec.data)));
 
 
@@ -433,3 +438,4 @@ else
 end
 data.roi(bobdata.roi.interior{roiind}(:,2) + (bobdata.roi.interior{roiind}(:,1) - 1) * size(data.roi, 1)) = 1;
 data.roiuid = bobdata.roi.roiIds{roiind};
+data.neuronuid = bobdata.roi.neuronIds{roiind};
