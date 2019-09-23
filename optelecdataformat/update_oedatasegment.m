@@ -40,6 +40,9 @@ if d.version < 0.08
     d.f_removed = d.f_removed(:);
     
 end
+if ~isfield(d,'neuronuid') 
+    d.neuronuid = [];
+end
 unknown_fields = setdiff(fieldnames(d), fieldnames(empty_oedatasegment));
 if ~isempty(unknown_fields)
     
