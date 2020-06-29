@@ -1,4 +1,4 @@
-function [aptimes, aptimes_window, params, opts] = infer(f, it, indicator, params, opts, nA2D)
+function [aptimes, aptimes_window, params, opts, moments] = infer(f, it, indicator, params, opts, nA2D)
 % simplest call:
 % aptimes = infer(f, it, indicator)
 % full call:
