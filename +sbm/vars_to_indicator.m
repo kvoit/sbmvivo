@@ -46,7 +46,7 @@ if islogical(opts.savepath)
     [f,p] = putfile_fromp(sbm.config_dir, '.mat', 'Save indicator config');
     save(fullfile(p,f),'-mat','-struct','ind');
 else
-    save(opts.savepath,'-mat'.'-struct','ind');
+    save(opts.savepath,'-mat','-struct','ind');
 end
 
 end
